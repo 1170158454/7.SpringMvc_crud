@@ -11,8 +11,9 @@
 </head>
 <body>	
 
-<form:form action="${ctp}/emp/${id}}" modelAttribute="employee" method="post">
+<form:form action="${ctp}/emp/${employee.id}" modelAttribute="employee" method="post">
 <input type="hidden" name="_method" value="PUT">
+<!--<input type="hidden" name="id" value="$employee.id">-->
 <!-- path 等于  html标签中的name项 -->
 	lastName:<form:input path="lastName"/><br/>
 	email:<form:input path="email"/><br/>

@@ -5,6 +5,7 @@ import java.util.Collection;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -65,11 +66,18 @@ public class MyController {
 	
 	//提交编辑
 	@RequestMapping(value="/emp/{id}",method=RequestMethod.PUT)
-	public String editEmps(Employee employee){
+	public String editEmps(Employee employee,@PathVariable("id")Integer id){
 		System.out.println(employee);
-		return "empedit";
+		return "redirect:/emps";
 	}
 	
-
+	@ModelAttribute
+	public void getEmp(@PathVariable("id")Integer id){
+		
+		System.out.println(id);
+		
+	}
+	
+	
 
 }
